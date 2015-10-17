@@ -10,19 +10,17 @@
 knowShareApp.controller('DashboardController', ['$scope', '$rootScope', 
     '$state', function ($scope, $rootScope, $state) {
 
-    $scope.viewSite = function(siteName, viewOnly) {
-        $scope.openSite(siteName, viewOnly);
-    }
+    $scope.$on('userLoad', function (event, args) {
+        UserModel.getNotificationList().success( function(notificationList) {
+            if (!notificationList || notificationList === undefined) {
+                console.log('Unable to found notifications for current user.');
+                return;
+            }
+            $rootScope.userInstance.notifications = notificationList;
+        }).error( function(error) {
+            console.error(error, 'Unable to fetch websites of current user.');
+        });
+    });
 
-    $scope.editSite = function(siteId, templateId, category, subCategory) {
-        $rootScope.siteId = siteId;
-        $rootScope.category = category;
-        $rootScope.subCategory = subCategory;
-        $rootScope.templateId = templateId;
-        $rootScope.templatePreview = true;
-        $rootScope.siteEditMode = true;
-        $state.go("base.templatePreview", {type: category, subType: subCategory, 
-            templateId: templateId});
-    }
 }]);
 
