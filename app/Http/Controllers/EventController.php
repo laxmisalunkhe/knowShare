@@ -2,13 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
-use App\Http\Controllers\KnowSeekerController;
-use App\Http\Requests;
-use App\KnowledgeSeeker;
 use Illuminate\Http\Request;
+use App\Http\Requests;
+use App\Http\Controllers\Controller;
 
-class KnowSeekerController extends Controller
+class EventController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class KnowSeekerController extends Controller
      */
     public function index()
     {
-       return response()->json(KnowledgeSeeker::all());
+        //
     }
 
     /**

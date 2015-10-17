@@ -22,3 +22,4 @@ Route::post('/updateSeeker','RegistrationController@updateKnowSeeker');
 Route::post('/updateTrainer','RegistrationController@updateTrainer');
 Route::get('/getCategories','CategoriesController@index');
 Route::get('/user/profile','LoginController@getCurrentUser');
+Route::get('/user/seekers','KnowSeekerController@index');
