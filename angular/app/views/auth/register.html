@@ -1,0 +1,61 @@
+<div class="top-content animated fadeInDown" ng-controller="AuthController">
+    <div class="inner-bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-sm-offset-4 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Register</h3>
+                            <p>Fill in the form below to get instant access:</p>
+                            <span class="text-danger" ng-if="errorMessage" ng-model="errorMessage"></span>
+
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-user"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" class="registration-form" ng-submit="register()">
+                            
+                            <div class="form-group">
+                                <label class="sr-only" for="user">user Name</label>
+                                <input type="text" name="user" placeholder="User Name" ng-model="registrationData.username"
+                                    class="user form-control">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="form-email">Email Id</label>
+                                <input type="text" name="form-email" ng-model="registrationData.email" placeholder="Email Id" class="form-email form-control" id="form-email">
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="form-last-name">Password</label>
+                                <input type="password" name="form-last-name" ng-model="registrationData.password" placeholder="Password" class="form-last-name form-control" id="password">
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 col-md-12 col-lg-12">
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optradio" required ng-model="registrationData.role" 
+                                                value="trainer">
+                                                Trainer
+                                            </label>
+                                    </div>
+                                    <div class="radio">
+                                        <label>
+                                            <input type="radio" name="optradio" ng-model="registrationData.role" 
+                                                value="seeker">Knowledge Gegainer</label>
+                                    </div>
+                                </div>
+                                <div class="clearfix"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-4 pull-right">
+                                    <button type="submit" class="btn">Register</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -19,10 +19,13 @@ knowShareApp.factory('AuthModel', ['$http', 'ROUTES', function($http, ROUTES) {
             return $http.get(ROUTES.ROOT + 'user/check');
         },
         login: function(data) {
-            return $http.post(ROUTES.ROOT + 'login', data)
+            return $http.post(ROUTES.ROOT + 'login', data);
         },
         register: function(data) {
-            return $http.post(ROUTES.ROOT + 'register', data)
+            return $http.post(ROUTES.ROOT + 'register', data);
+        },
+        logout: function() {
+            return $http.get(ROUTES.ROOT + 'logout');
         }
     };
     return new AuthModel();

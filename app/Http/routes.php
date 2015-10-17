@@ -17,6 +17,7 @@ Route::get('/', function () {
 
 Route::post('/register','RegistrationController@create');
 Route::post('/login','LoginController@auth');
+Route::get('logout','LoginController@logout');
 Route::post('/updateSeeker','RegistrationController@updateKnowSeeker');
 Route::post('/updateTrainer','RegistrationController@updateTrainer');
 Route::get('/getCategories','CategoriesController@index');

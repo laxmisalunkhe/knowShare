@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests;
 use Carbon\Carbon;
 use Request;
+use Response;
 use Auth;
 use DB;
 use App\User;
@@ -43,22 +44,17 @@ class RegistrationController extends Controller
         }else{
             $role_id = 3;
         }
-
+        //echo "success";exit;
         $createUser = DB::table('users')->insertGetId([
+                          'username' => $registerReq['username'], 
                           'email' => $registerReq['email'], 
                           'password' => bcrypt($registerReq['password']),
                           'role_id'  => $role_id,
                           'created_at'=> Carbon::now()
         ]);
 
-        
-         /* if ($registerReq['role'] ==='seeker') {
-            insertIntoSeeker($createUser['id'],$registerReq['name'],);
-        }else{
-            $role_id = 3;
-        }*/
-
-        return response()->json(['status' => '200', 'email' => $registerReq['email'],'id' => $createUser]);
+        //echo "success";
+        return response()->json(['status' => '200', 'email' => $registerReq['email'], 'roleId'=>$role_id, 'id' => $createUser]);
     }
 
     /**
@@ -68,7 +64,8 @@ class RegistrationController extends Controller
     public function updateKnowSeeker(){
         $requestUpdateSeeker = Request::all();
         $updateUser = DB::table('know_seeker')->insertGetId([
-                          'user_id'          => $requestUpdateSeeker['user_id'], 
+                          //'user_id'          => Auth::User()->user_id, 
+                          'user_id'          => 8, 
                           'name'             => $requestUpdateSeeker['name'], 
                           'contact'          => $requestUpdateSeeker['contact'], 
                           'age_5_10'         => $requestUpdateSeeker['age_5_10'], 
@@ -78,21 +75,21 @@ class RegistrationController extends Controller
                           'address'          => $requestUpdateSeeker['address'], 
                           'city'             => $requestUpdateSeeker['city'], 
                           'district'         => $requestUpdateSeeker['district'], 
-                          'zip'              => $requestUpdateSeeker['zipcode'], 
+                          'zip'              => $requestUpdateSeeker['zip'], 
                           'state'            => $requestUpdateSeeker['state'], 
                           'description'      => $requestUpdateSeeker['description'], 
                           'institution_name' => $requestUpdateSeeker['institution_name'], 
                           'created_at'=> Carbon::now()
         ]);
         
-        $countTags  = $requestUpdateSeeker['categoryTags'];
+        /*$countTags  = $requestUpdateSeeker['categoryTags'];
         foreach ($variable as $key => $countTags) {
             $createRelation = DB::table('cat_seeker_relation')->insert([
                       'user_id'          => $requestUpdateSeeker['user_id'], 
                       'category_id'      => $countTags['id'],
                       'created_at'=> Carbon::now()
                 ]);
-        }
+        }*/
         return response()->json(['status' => '200', 'message' => 'Ok']);
     }
 
@@ -103,16 +100,17 @@ class RegistrationController extends Controller
     public function updateTrainer(){
               $requestUpdateTrainer = Request::all();
               $updateTrainer = DB::table('trainer')->insertGetId([
-                     'user_id'          => $requestUpdateTrainer['user_id'], 
+                     'user_id'          => Auth::User()->id, 
+                     //'user_id'          => 8, 
+                     //'user_id'          => $requestUpdateTrainer['user_id'], 
                      'name'             => $requestUpdateTrainer['name'], 
                      'contact'          => $requestUpdateTrainer['contact'],
                      'address'          => $requestUpdateTrainer['address'], 
                      'city'             => $requestUpdateTrainer['city'], 
-                     'zip'              => $requestUpdateTrainer['zipcode'], 
+                     'zip'              => $requestUpdateTrainer['zip'], 
                      'state'            => $requestUpdateTrainer['state'], 
-                     'domain_details'   => $requestUpdateTrainer['domain'],
+                     'domain_details'   => $requestUpdateTrainer['domain_details'],
                      'created_at'       => Carbon::now()
-
                 ]);
 
         return response()->json(['status' => '200', 'message' => 'Ok']);

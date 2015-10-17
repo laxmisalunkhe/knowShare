@@ -15,7 +15,16 @@ knowShareApp.controller('BaseController', ['$scope', 'ROUTES', '$rootScope', '$w
           "title": "Success!",
           "content": "alert directive is working pretty well with 3 sec timeout"
         };
-        
+
+        $scope.logout = function() {
+            AuthModel.logout().success( function() {
+                console.log('successfully logout');
+                $rootScope.userInstance = {};
+            }).error( function() {
+                console.log('Unable to logout');
+            })
+        }
+
         $scope.baseScope.alerts = [];
         $scope.addAlert = function(alert) {
             $scope.baseScope.alerts.push(alert);
@@ -47,12 +56,9 @@ knowShareApp.controller('BaseController', ['$scope', 'ROUTES', '$rootScope', '$w
             if (toState.name === 'customState') {
                 $rootScope.ctrl = toParams.ctrl;
                 $rootScope.action = toParams.action;
-            }
-            if (toState.name === 'viewOnly') {
+            } else if (toState.name === 'viewOnly') {
                 $rootScope.tabName = toParams.tabName;
-            }
-            // Checking is user loggedIn or not
-            if (!$rootScope.isLoggedIn) {
+            } else if (!$rootScope.isLoggedIn) {
                 $rootScope.isLoggedIn = auth();
             }
         });

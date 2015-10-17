@@ -25,11 +25,18 @@ class LoginController extends Controller
         if(Auth::attempt(['email'=>$rowInput['email'], 'password'=>$rowInput['password']]))
         {
             // echo "hello in";
-            return \Response::json(['status'=>'success','url'=>'http://localhost/knowShare/dashboard']);
+            $getRole  = User::where('email',$rowInput['email'])->first();
+            $getRole  = $getRole['role_id'];
+            return \Response::json(['status'=>'success','email'=>$rowInput['email'],'roleId'=>$getRole,'url'=>'http://localhost/knowShare/dashboard']);
               // return "success";
-        }else {
-            return \Response::json(['status'=>'fail','url'=>$rowInput['customer']['redirectURL']]);
+        } else {
+            return \Response::json(['status'=>'fail']);
         }
+    }
+
+    public function logout() {
+        Auth::logout();
+        return;
     }
 
     /**

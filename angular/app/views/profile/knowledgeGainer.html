@@ -1,0 +1,112 @@
+<div class="top-content" ng-controller="UserController">
+    <div class="inner-bgReg">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text textReg">
+                    <h1>Registration Form</h1>
+                </div>
+                <div class="col-sm-12 form-box">
+                    <div class="form-top">
+                        <div class="form-top-left">
+                            <h3>Registr now</h3>
+                            <p>Fill in the form below to get instant access:</p>
+                        </div>
+                        <div class="form-top-right">
+                            <i class="fa fa-registered"></i>
+                        </div>
+                    </div>
+                    <div class="form-bottom">
+                        <form role="form" class="kGregistration-form" ng-submit="updateSeeker()">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label class="sr-only" for="name">First name</label>
+                                    <input type="text" name="name" placeholder="First name..." 
+                                        class="name form-control" ng-model="seekerData.name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="address">Address</label>
+                                    <input type="text" name="address" placeholder="Address..."
+                                        class="address form-control" ng-model="seekerData.address">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="district">district</label>
+                                    <input type="text" name="district" placeholder="District..." 
+                                        class="district form-control" ng-model="seekerData.district">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="state">state</label>
+                                    <input type="text" name="state" placeholder="State..." 
+                                        class="state form-control" ng-model="seekerData.state">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="city">city</label>
+                                    <input type="text" name="city" placeholder="City/Town/village.." 
+                                        class="city form-control" ng-model="seekerData.city">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="row">
+                                    <div class="col-sm-12 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <input type="text" name="age_5_10" placeholder="Age 5-10" class="age_5_10 form-control" ng-model="seekerData.age_5_10">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <input type="text" name="age_10_20" placeholder="Age 10-20" class="age_10_20 form-control" ng-model="seekerData.age_10_20">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-4 col-lg-4">
+                                        <div class="form-group">
+                                            <input type="text" name="age_20_40" placeholder="Age 20-40 " class="age_20_40 form-control" ng-model="seekerData.age_20_40">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-12 col-md-12 col-lg-12">
+                                        <div class="form-group">
+                                            <input type="text" name="age_40" placeholder="Age 40 on words" 
+                                                class="age_40 form-control" ng-model="seekerData.age_40">
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="institution">institution Name</label>
+                                    <input type="text" name="institution" placeholder="institution Name..." 
+                                        class="institution form-control" ng-model="seekerData.institution_name">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="categorytag">category tag</label>
+                                    <input type="text" name="categorytag" placeholder="categorytag" 
+                                        class="categorytag form-control" ng-model="seekerData.categorytag">
+                                </div>
+                                <div class="form-group">
+                                    <label class="sr-only" for="zipcode">zipcode</label>
+                                    <input type="text" name="zipcode" placeholder="Zipcode..." 
+                                        class="zipcode form-control" ng-model="seekerData.zip">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="sr-only" for="Contact">Contact</label>
+                                    <input type="text" name="contact" placeholder="contact..." 
+                                        class="contact form-control" ng-model="seekerData.contact">
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <div class="form-group">
+                                    <label class="sr-only" for="description">Description</label>
+                                    <textarea name="description" placeholder="Description..." 
+                                        class="description form-control" ng-model="seekerData.description"></textarea>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn">Registr me!</button>
+                            </div>
+                            <div class="clearfix"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
