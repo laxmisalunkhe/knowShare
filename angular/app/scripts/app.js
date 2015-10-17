@@ -16,7 +16,7 @@ if (hostname === 'staging.gobiggi.com') {
     subDirPath = '';
 }
 var knowShareApp = angular.module('knowShareApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 
-    'ngSanitize', 'ngTouch', 'ui.router', 'ui.bootstrap', 'mgcrea.ngStrap']);
+    'ngSanitize', 'ngTouch', 'ui.router', 'ui.bootstrap']);
 
 knowShareApp.constant('ROUTES', (function() {
     // Temporary Added static root directory

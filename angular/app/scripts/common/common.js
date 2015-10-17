@@ -1,5 +1,5 @@
 jQuery(document).ready(function() {
-    $.backstretch("assets/img/backgrounds/1.jpg");
+    $.backstretch("img/backgrounds/1.jpg");
     $('#top-navbar-1').on('shown.bs.collapse', function() {
         $.backstretch("resize");
     });
