@@ -36,4 +36,20 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * Get the phone record associated with the user.
+     */
+    public function trainer()
+    {
+        return $this->hasOne('App\Trainer');
+    }
+
+    /**
+     * Get the phone record associated with the user.
+     */
+    public function seeker()
+    {
+        return $this->hasOne('App\KnowledgeSeeker');
+    }
 }

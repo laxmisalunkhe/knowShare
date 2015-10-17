@@ -4,3 +4,6 @@ Homestead.yaml
 Homestead.json
 .env
 .env.example
+composer.lock
+knowShare.sublime-project
+knowShare.sublime-workspace

@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/register','RegistrationController@create');
+Route::post('/login','LoginController@auth');
+Route::post('/updateSeeker','RegistrationController@updateKnowSeeker');
+Route::post('/updateTrainer','RegistrationController@updateTrainer');
+Route::get('/getCategories','CategoriesController@index');
+Route::get('/user/profile','LoginController@getCurrentUser');
