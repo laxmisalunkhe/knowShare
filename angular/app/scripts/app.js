@@ -1,5 +1,4 @@
 'use strict';
-
 /**
  * @ngdoc overview
  * @name knowShareApp
@@ -8,30 +7,25 @@
  *
  * Main module of the application.
  */
-angular
-  .module('knowShareApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch'
-  ])
-  .config(function ($routeProvider) {
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/main.html',
-        controller: 'MainCtrl'
-      })
-      .when('/about', {
-        templateUrl: 'views/about.html',
-        controller: 'AboutCtrl'
-      })
-      .when('/dashboard', {
-        templateUrl: 'views/dashboard.html',
-        controller: 'AboutCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  });
+
+var hostname = window.location.hostname;
+var serverPath = 'http://localhost/';
+var subDirPath = 'knowShare/';
+if (hostname === 'staging.gobiggi.com') {
+    serverPath = 'http://staging.gobiggi.com/';
+    subDirPath = '';
+}
+var knowShareApp = angular.module('knowShareApp', ['ngAnimate', 'ngCookies', 'ngResource', 'ngRoute', 
+    'ngSanitize', 'ngTouch', 'ui.router', 'ui.bootstrap', 'mgcrea.ngStrap']);
+
+knowShareApp.constant('ROUTES', (function() {
+    // Temporary Added static root directory
+    var root = serverPath + subDirPath;
+    return {
+        ROOT: root + 'public/',
+        APP: root + 'angular/app/',
+        BOWER: root + 'bower_components/',
+        RESOURCES: root + 'angular/app/',
+        SERVER: root + 'server/'
+    };
+})());
