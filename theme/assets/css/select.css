@@ -107,12 +107,6 @@ ul.navbar-nav {
 .navbar-inverse ul.navbar-nav li .li-social a:hover, 
 .navbar-inverse ul.navbar-nav li .li-social a:focus { border: 0; color: #19b9e7; }
 
-.navbar-brand {
-	width: 123px;
-	background: url(../img/logo.png) left center no-repeat;
-	text-indent: -99999px;
-}
-
 
 /***** Top content *****/
 
