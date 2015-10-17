@@ -47,12 +47,9 @@ knowShareApp.controller('BaseController', ['$scope', 'ROUTES', '$rootScope', '$w
             if (toState.name === 'customState') {
                 $rootScope.ctrl = toParams.ctrl;
                 $rootScope.action = toParams.action;
-            }
-            if (toState.name === 'viewOnly') {
+            } else if (toState.name === 'viewOnly') {
                 $rootScope.tabName = toParams.tabName;
-            }
-            // Checking is user loggedIn or not
-            if (!$rootScope.isLoggedIn) {
+            } else if (!$rootScope.isLoggedIn) {
                 $rootScope.isLoggedIn = auth();
             }
         });

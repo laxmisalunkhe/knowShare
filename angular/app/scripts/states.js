@@ -21,11 +21,11 @@ knowShareApp.config(function($locationProvider, $stateProvider, $urlRouterProvid
         },
         onEnter: function($state, $stateParams, $http) {
             if ($stateParams.ctrl === 'auth' && $stateParams.action === 'login') {
-                $http.get('checkAuthentication').success(function(data) {
+                /*$http.get('checkAuthentication').success(function(data) {
                     if (data.status === true) {
                         $state.go("home")
                     }
-                });
+                });*/
             }
         }
     });
