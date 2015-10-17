@@ -16,6 +16,15 @@ knowShareApp.controller('BaseController', ['$scope', 'ROUTES', '$rootScope', '$w
           "content": "alert directive is working pretty well with 3 sec timeout"
         };
 
+        $scope.logout = function() {
+            AuthModel.logout().success( function() {
+                console.log('successfully logout');
+                $rootScope.userInstance = {};
+            }).error( function() {
+                console.log('Unable to logout');
+            })
+        }
+
         $scope.baseScope.alerts = [];
         $scope.addAlert = function(alert) {
             $scope.baseScope.alerts.push(alert);

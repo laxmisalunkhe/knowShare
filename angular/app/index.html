@@ -33,7 +33,7 @@
             </li>
             <li>
                 <span>Image 03</span>
-                <div><h3>Education is key to unlock the golder door to freedom.</h3></div>
+                <div><h3>Education is key to unlock the golden door to freedom.</h3></div>
             </li>
             <li>
                 <span>Image 04</span>
@@ -66,8 +66,11 @@
                         <ul class="nav navbar-nav navbar-right animated fadeInDown">
                             <li>
                               <span class="li-social">
-                                  <a class="btn btn-link-1" ui-sref="customState({ctrl: 'auth', action: 'login'})">Login</a>
-                                  <a class="btn btn-link-1" ui-sref="customState({ctrl: 'auth', action: 'register'})">Register</a>
+                                  <a class="btn btn-link-1" ng-hide="userInstance" 
+                                        ui-sref="customState({ctrl: 'auth', action: 'login'})">Login</a>
+                                  <a class="btn btn-link-1" ng-hide="userInstance" 
+                                        ui-sref="customState({ctrl: 'auth', action: 'register'})">Register</a>
+                                  <a class="btn btn-link-1" ng-show="userInstance" ng-href="/knowShare/public/logout">Logout</a>
                                 </span>
                             </li>
                             <li>
