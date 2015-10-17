@@ -15,7 +15,7 @@ knowShareApp.controller('BaseController', ['$scope', 'ROUTES', '$rootScope', '$w
           "title": "Success!",
           "content": "alert directive is working pretty well with 3 sec timeout"
         };
-        
+
         $scope.baseScope.alerts = [];
         $scope.addAlert = function(alert) {
             $scope.baseScope.alerts.push(alert);

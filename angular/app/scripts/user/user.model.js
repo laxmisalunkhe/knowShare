@@ -31,13 +31,13 @@ knowShareApp.factory('UserModel', ['$http', 'ROUTES', function($http, ROUTES) {
             return $http.get(ROUTES.ROOT + 'notificationList');
         },
         saveData: function(data) {
-            return $http.post(ROUTES.ROOT + 'saveData', data)
+            return $http.post(ROUTES.ROOT + 'saveData', data);
         },
         updateTrainer: function(data) {
-            return $http.post(ROUTES.ROOT + 'updateTrainer', data)
+            return $http.post(ROUTES.ROOT + 'updateTrainer', data);
         },
         updateSeeker: function(data) {
-            return $http.post(ROUTES.ROOT + 'updateSeeker', data)
+            return $http.post(ROUTES.ROOT + 'updateSeeker', data);
         }
     };
     return new UserModel();
