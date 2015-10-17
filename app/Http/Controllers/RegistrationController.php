@@ -100,16 +100,17 @@ class RegistrationController extends Controller
     public function updateTrainer(){
               $requestUpdateTrainer = Request::all();
               $updateTrainer = DB::table('trainer')->insertGetId([
-                     'user_id'          => $requestUpdateTrainer['user_id'], 
+                     'user_id'          => Auth::User()->id, 
+                     //'user_id'          => 8, 
+                     //'user_id'          => $requestUpdateTrainer['user_id'], 
                      'name'             => $requestUpdateTrainer['name'], 
                      'contact'          => $requestUpdateTrainer['contact'],
                      'address'          => $requestUpdateTrainer['address'], 
                      'city'             => $requestUpdateTrainer['city'], 
-                     'zip'              => $requestUpdateTrainer['zipcode'], 
+                     'zip'              => $requestUpdateTrainer['zip'], 
                      'state'            => $requestUpdateTrainer['state'], 
-                     'domain_details'   => $requestUpdateTrainer['domain'],
+                     'domain_details'   => $requestUpdateTrainer['domain_details'],
                      'created_at'       => Carbon::now()
-
                 ]);
 
         return response()->json(['status' => '200', 'message' => 'Ok']);
