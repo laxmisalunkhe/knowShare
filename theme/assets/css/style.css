@@ -7,6 +7,7 @@ body {
     line-height: 30px;
     text-align: center;
     background: url(../img/background.jpg) no-repeat;
+    background-attachment: fixed;
 }
 
 li {
@@ -189,7 +190,9 @@ ul.navbar-nav {
 }
 
 /***** Events Vcards *****/
-
+.grid li{
+	cursor: pointer;
+}
 .eventBox{
 	font-family: 'Open Sans', sans-serif;
 	position: relative;
@@ -234,7 +237,9 @@ ul.navbar-nav {
 	padding: 5px 15px;
     line-height: 20px;
 }
-
+.eventPopup{
+	
+}
 
 /***** Media queries *****/
 
@@ -294,3 +299,4 @@ only screen and (                min-resolution: 2dppx) {
 	margin: auto;
 	background-color: rgba(0,0,0,0.5);
 }
+	
