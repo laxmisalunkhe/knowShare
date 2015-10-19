@@ -1,0 +1,190 @@
+<style type="text/css">
+.demo {
+    position: relative;
+}
+
+.demo i {
+    position: absolute;
+    bottom: 10px;
+    right: 24px;
+    top: auto;
+    cursor: pointer;
+}
+</style>
+<script>
+new AnimOnScroll(document.getElementById('grid'), {
+    minDuration: 0.4,
+    maxDuration: 0.7,
+    viewportFactor: 0.2
+});
+
+$(document).ready(function() {
+
+
+    $('#startDate').daterangepicker({
+        singleDatePicker: true,
+        startDate: moment().subtract(6, 'days')
+    });
+
+    $('#endDate').daterangepicker({
+        singleDatePicker: true,
+        startDate: moment()
+    });
+
+    function updateConfig() {
+        var options = {};
+
+
+
+        if ($('#startDate').val().length)
+            options.startDate = $('#startDate').val();
+
+        if ($('#endDate').val().length)
+            options.endDate = $('#endDate').val();
+
+
+
+    }
+
+   
+
+});
+</script>
+
+<div class="container">
+    <!-- Top Navigation -->
+    <ul class="grid effect-2" id="grid">
+        <li class="event">
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="eventBox">
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">
+                            <img src="img/events/1.jpg">
+                        </a>
+                        <div class="eventDetails">
+                            <h6>Demo Title Lorem Ipsum</h6>
+                            <div class="tagBox">
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                            </div>
+                        </div>
+                        <div class="eventAddress">
+                            <span>DieSachbearbeiter Schönhauser Allee 167c 10435 Berlin</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="eventBox">
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">
+                            <img src="img/events/2.jpg">
+                        </a>
+                        <div class="eventDetails">
+                            <h6>Demo Title Lorem Ipsum</h6>
+                            <div class="tagBox">
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                            </div>
+                        </div>
+                        <div class="eventAddress">
+                            <span>DieSachbearbeiter Schönhauser Allee 167c 10435 Berlin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="eventBox">
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">
+                            <img src="img/events/3.jpg">
+                        </a>
+                        <div class="eventDetails">
+                            <h6>Demo Title Lorem Ipsum</h6>
+                            <div class="tagBox">
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                            </div>
+                        </div>
+                        <div class="eventAddress">
+                            <span>DieSachbearbeiter Schönhauser Allee 167c 10435 Berlin</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="eventBox">
+                        <a href="javascript:void(0);" data-toggle="modal" data-target="#myModal">
+                            <img src="img/events/4.jpg">
+                        </a>
+                        <div class="eventDetails">
+                            <h6>Demo Title Lorem Ipsum</h6>
+                            <div class="tagBox">
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                                <a href="javascript:void(0);"><span>#demo</span></a>
+                            </div>
+                        </div>
+                        <div class="eventAddress">
+                            <span>DieSachbearbeiter Schönhauser Allee 167c 10435 Berlin</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Title</h4>
+                <form>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="startDate">startDate</label>
+                                <input type="text" class="form-control" id="startDate" value="07/01/2015">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="endDate">endDate</label>
+                                <input type="text" class="form-control" id="endDate" value="07/15/2015">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">message</label>
+                                <textarea name="message" placeholder="message..." class="message form-control"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label class="sr-only" for="volunteers">Other volunteers</label>
+                                <input type="text" name="volunteers" placeholder="Other volunteers name" class="Other volunteers form-control">
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
